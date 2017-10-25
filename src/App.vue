@@ -1,19 +1,16 @@
 <template>
   <div id="app">
-    <!-- <nav class="button">
-      <router-link class="btn" to="">查看</router-link>
-      <router-link class="btn" to="">提交</router-link>
-      <router-view></router-view>
-    </nav> -->
+    <ihead></ihead>
+    <router-view></router-view>
     <!-- <upload></upload> -->
     <!-- <assign></assign> -->
     <!-- <login></login> -->
-    <register></register>
+    <!-- <register></register> -->
   </div>
 </template>
 
 <script>
-import ihead from "./components/head.vue"
+import ihead from "./vuefile/head.vue"
 import assign from "./components/assignment.vue"
 import upload from "./components/upload.vue"
 import login from "./components/login.vue"
@@ -49,27 +46,4 @@ body {
   margin: 0 auto;
   overflow: hidden;
 }
-/*.button {
-  width: 185px;
-  float: left;
-  position: fixed;
-  top: 246px;
-}
-.button .btn {
-  display: inline-block;
-  width: 185px;
-  height: 52px;
-  text-align: center;
-  line-height: 52px;
-  background-color: #bfbfbf;
-  border-radius: 10px;
-  font-size: 28px;
-  color: #63656a;
-  margin-bottom: 48px;
-  cursor: pointer;
-}
-.button .active {
-  background-color: #69b1ee;
-  color: #fff;
-}*/
 </style>

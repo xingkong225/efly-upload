@@ -12,47 +12,65 @@
     list-style: none;
     text-decoration: none;
   }
-  #demo {
-    width: 100px;
-    height: 100px;
-    background-color: #3bb3e0;
-    /*animation: myAnimation 2s;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-out;*/
-    box-shadow: 0 20px #000;
+  .demo {
+  				width: 300px;
+  				border: 1px solid #ccc;
+  				padding: 10px;
+          transition: border 0.2s ease 0s;
+  			}
+  .demo:hover {
+    border: 2px solid #0f0;
+    width: 500px;
   }
-  h1 {
-    text-shadow: 0 2px 0 #000, 0 -1px 0 #000, 1px 0 0 #000, -1px 0 0 #000;
-    color: #fff;
-    font-family: 'Arial';
-  }
-  /* 定义动画 给具体的元素赋值 */
-  @keyframes myAnimation {
-    0% {
-      width: 0%;
-      opacity: 0;
-      border-radius: 15px;
-    }
-    70% {
-      width: 10%;
-      border-radius: 15px;
-    }
-    80% {
-      width: 40%;
-    }
-    90% {
-      width: 70%;
-    }
-    100% {
-      width: 100%;
-      border-radius: 0;
-    }
-  }
+.demo li {
+  				border: 1px solid #ccc;
+  				padding: 2px;
+  				float: left;
+  				margin-right:4px;
+  			}
+.demo a {
+  				float: left;
+  				display: block;
+  				height: 20px;
+  				line-height: 20px;
+  				width: 20px;
+  				-moz-border-radius: 10px;
+  				-webkit-border-radius: 10px;
+  				border-radius: 10px;
+  				text-align: center;
+  				background: #f36;
+  				text-decoration: none;
+  			}
+input[type="text"]:disabled {
+  border: 1px solid #ccc;
+}
+.demo a:link {color:#fff;}/*链接没有被访问时前景色为灰色*/
+.demo a:visited{color:yellow;}/*链接被访问过后前景色为黄色*/
+.demo a:hover{color:green;}/*鼠标悬浮在链接上时前景色为绿色*/
+.demo a:active{color:blue;}/*鼠标点中激活链接那一下前景色为蓝色*/
   </style>
 </head>
 <body>
-  <div id="demo">
-  <h1>hello world</h1>
+  <div class="demo clearfix">
+    <ul class="clearfix">
+  	<li class="first links odd" id="first"><a href="#">1</a></li>
+  	<li class="links even"><a href="#">2</a></li>
+  	<li class="links odd"><a href="#">3</a></li>
+  	<li class="links even"><a href="#">4</a></li>
+  	<li class="links odd"><a href="">5</a></li>
+  	<li class="links even"><a href="">6</a></li>
+  	<li class="links odd"><a href="">7</a></li>
+  	<li class="links even"><a href="">8</a></li>
+  	<li class="links odd"><a href="">9</a></li>
+  	<li class="links even last" id="last"><a href="">10</a></li>
+  </ul>
   </div>
+      <input type="text">你有什么想法吗？1
+      <input type="text">你有什么想法吗？2
+      <input type="text">你有什么想法吗？3
+      <input type="text">你有什么想法吗？4
+      <input type="text">你有什么想法吗？5
+      <input type="button" value="确认">
+      <input type="submit" value="提交">
 </body>
 </html>

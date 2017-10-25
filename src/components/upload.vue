@@ -1,11 +1,11 @@
 <template lang="html">
   <div class="app">
-    <ihead></ihead>
-    <div class="content">
-        <form action="index.html" method="post">
+    <NavBar></NavBar>
+    <div class="wrap">
+        <form class="content" method="post">
             作业描述：<input class="desc" type="text" placeholder="你对作业的描述..."><br/>
             作业附件：<a href="javascript:;" class="upload">
-            请选择文件：<input type="file" value="" @change="filechange">
+            请选择文件：<input type="file">
             <i class="iconfont icon-shangchuanziliao"></i>
             </a><br/>
             <button type="submit" value="">提交</button>
@@ -15,29 +15,33 @@
 </template>
 
 <script>
-import ihead from "./head.vue"
+import NavBar from "./nav"
 export default {
+  name: 'upload',
   components: {
-    ihead
+    NavBar
   }
 }
 </script>
 
-<style lang="css">
-.content {
+<style lang="css" scoped>
+.wrap {
   float: right;
-  width: 368px;
-  height: 327px;
+  width: 575px;
+  height: 456px;;
   margin-top: 118px;
   margin-right: 114px;
   border: 1px solid #000;
-  padding: 130px 103px 0;
+}
+.content {
+  width: 314px;
+  height: 254px;
+  margin: 20% auto;
 }
 .content .desc {
   width: 216px;
   height: 30px;
   line-height: 30px;
-  text-indent: 5px;
   color: #888;
   font-size: 15px;
   font-family: '微软雅黑';
@@ -55,13 +59,13 @@ export default {
 }
 .content .desc, .content .upload {
   margin-bottom: 52px;
+  text-indent: 12px;
 }
 .upload {
   display: inline-block;
   width: 216px;
   height: 30px;
   line-height: 30px;
-  text-indent: 8px;
   color: #888;
   border: 2px solid #000;
   border-radius: 4px;
@@ -71,8 +75,8 @@ export default {
   display: inline-block;
   font-size: 20px;
   position: absolute;
-  right: 10px;
-  top: 10%;
+  left: 48%;
+  top: 5%;
 }
 .upload input {
   width: 216px;

@@ -1,33 +1,33 @@
 <template lang="html">
   <div class="app">
-    <ihead></ihead>
     <div class="login">
       <loginimg></loginimg>
       <div class="log">
         <h4>LOGIN</h4>
         <p class="p1">LOGIN  WITH  YOUR  ACCOUNT</p>
-        <input class="text iconfont" type="text" placeholder="user name"><br/>
-        <input class="password" type="password" placeholder="password"><br/>
+        <div class="input">
+          <input class="text" type="text" placeholder="username or email"><br/>
+          <input class="password" type="password" placeholder="password"><br/>
+          <i class="iconfont icon-mima"></i><i class="iconfont icon-yonghuming"></i>
+        </div>
         <button type="button">Login</button>
-        <p class="p2">If you do not have an account<a href="#">Sign Up</a></p>
-        <i class="iconfont icon-mima"></i><i class="iconfont icon-yonghuming"></i>
+        <p class="p2">If you do not have an account<router-link to="/reg">Sign Up</router-link></p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ihead from "./head.vue"
-import loginimg from "./loginimg.vue"
+import loginimg from "../vuefile/loginimg.vue"
 export default {
+  name: 'login',
   components: {
-    ihead,
     loginimg
   }
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 .login {
   overflow: hidden;
 }
@@ -61,11 +61,10 @@ export default {
   border: 1px solid #818181;
   background-color: #fffcfc;
   font-size: 18px;
+  cursor: pointer;
 }
 .login p {
 
-}
-.icon-mima, .icon-yonghuming {
 }
 .p1 {
   font-size: 14px;
@@ -81,5 +80,19 @@ export default {
   padding-left: 30px;
   color: #2a2a2a;
   font-weight: bold;
+}
+.input {
+  position: relative;
+}
+.iconfont {
+  position: absolute;
+  left: 4%;
+  font-size: 30px;
+}
+.icon-mima {
+  top: 55%;
+}
+.icon-yonghuming {
+  top: 6%;
 }
 </style>

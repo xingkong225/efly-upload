@@ -1,25 +1,27 @@
 <template lang="html">
   <div class="app">
-    <ihead></ihead>
+    <NavBar></NavBar>
     <div class="assign">
       <span>作业描述: </span><input class="desc" type="text" value=""><br/>
-      <span>作业附件: </span><br/><a href="#">点击下载</a>
-      <i class="iconfont icon-xiazai-dianji"></i>
+      <span>作业附件: </span><br/>
+      <div class="wrap">
+        <a href="#">点击下载</a><i class="iconfont icon-xiazai-dianji"></i>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import ihead from "./head.vue"
+import NavBar from './nav'
 export default {
   name: 'assignment',
   components: {
-    ihead
+    NavBar
   }
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 .assign {
   width: 421px;
   padding-top: 118px;
@@ -47,6 +49,11 @@ export default {
   text-decoration: underline;
 }
 .iconfont {
-  font-size: 22px;
+  font-size: 21px;
+  position: absolute;
+  left: 35%;
+}
+.wrap {
+  position: relative;
 }
 </style>

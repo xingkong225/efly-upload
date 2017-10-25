@@ -9,7 +9,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 .logo {
   width: 100%;
   height: 130px;
@@ -17,6 +17,7 @@ export default {
   border-bottom: 1px solid #000;
 }
 .logo h1 {
+  padding-left: 30px;
   padding-top: 30px;
   line-height: 44px;
   font-size: 48px;

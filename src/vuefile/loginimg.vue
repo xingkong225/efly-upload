@@ -7,7 +7,7 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="css" scoped>
 img {
   float: left;
   width: 639px;
