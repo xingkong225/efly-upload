@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>demo</title>
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  #demo {
+    width: 100px;
+    height: 100px;
+    background-color: #3bb3e0;
+    /*animation: myAnimation 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;*/
+    box-shadow: 0 20px #000;
+  }
+  h1 {
+    text-shadow: 0 2px 0 #000, 0 -1px 0 #000, 1px 0 0 #000, -1px 0 0 #000;
+    color: #fff;
+    font-family: 'Arial';
+  }
+  /* 定义动画 给具体的元素赋值 */
+  @keyframes myAnimation {
+    0% {
+      width: 0%;
+      opacity: 0;
+      border-radius: 15px;
+    }
+    70% {
+      width: 10%;
+      border-radius: 15px;
+    }
+    80% {
+      width: 40%;
+    }
+    90% {
+      width: 70%;
+    }
+    100% {
+      width: 100%;
+      border-radius: 0;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div id="demo">
+  <h1>hello world</h1>
+  </div>
+</body>
+</html>
