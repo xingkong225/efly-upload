@@ -6,6 +6,7 @@ import router from './router'
 require('./assets/iconfont/upload/iconfont.css')
 require('./assets/iconfont/download/iconfont.css')
 require('./assets/iconfont/user/iconfont.css')
+require('./assets/iconfont/email/iconfont.css')
 
 Vue.config.productionTip = false
 

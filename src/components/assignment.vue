@@ -1,59 +1,90 @@
 <template lang="html">
   <div class="app">
     <NavBar></NavBar>
-    <div class="assign">
-      <span>作业描述: </span><input class="desc" type="text" value=""><br/>
-      <span>作业附件: </span><br/>
-      <div class="wrap">
-        <a href="#">点击下载</a><i class="iconfont icon-xiazai-dianji"></i>
-      </div>
+    <div class="wrap">
+      <form class="content">
+        <p class="homework">作业描述：</p><textarea class="desc" placeholder="组长要求的作业内容......"></textarea>
+        <p>作业附件：</p>
+        <a class="download" href="#">点击下载<i class="iconfont icon-xiazai-dianji"></i></a>
+        <button>提交</button>
+      </form>
     </div>
   </div>
 </template>
 
 <script>
-import NavBar from './nav'
+import NavBar from "./nav"
 export default {
-  name: 'assignment',
+  name: 'upload',
+  data () {
+    return {
+      filename: ''
+    }
+  },
   components: {
     NavBar
+  },
+  methods: {
+    filechange(e) {
+      var fileObj = e.target.files[0];
+      this.filename = fileObj.name;
+    }
   }
 }
 </script>
 
 <style lang="css" scoped>
-.assign {
-  width: 421px;
-  padding-top: 118px;
-  padding-right: 305px;
-  float: right;
-}
-.assign .desc {
-  display: inline-block;
-  margin-bottom: 30px;
-  width: 654px;
-  height: 35px;
-  font-size: 20px;
-  border: 1px solid #000;
-  text-indent: 10px;
-}
-.assign span {
-  display: inline-block;
-  padding:0 0 25px;
-  font-size: 20px;
-}
-.assign a {
-  display: inline-block;
-  padding-left: 65px;
-  color: #000;
-  text-decoration: underline;
-}
-.iconfont {
-  font-size: 21px;
-  position: absolute;
-  left: 35%;
-}
-.wrap {
-  position: relative;
-}
+  .wrap {
+    float: right;
+    margin-top: 72px;
+    border: 1px solid #000;
+  }
+  .content {
+    width: 314px;
+    padding: 100px 150px;
+    height: auto;
+  }
+  .content p {
+    line-height: 30px;
+    padding-bottom: 15px;
+    font-size: 18px;
+  }
+  .content .desc {
+    width: 306px;
+    height: 120px;
+    resize: none;
+    line-height: 30px;
+    font-size: 16px;
+    font-family: '微软雅黑';
+  }
+  .content button {
+    width: 310px;
+    height: 56px;
+    background-color: #69b1ee;
+    color: #fff;
+    font-size: 25px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .content .desc {
+    text-indent: 12px;
+    color: #888;
+    border-radius: 4px;
+    border: 2px solid #000;
+    margin-bottom: 30px;
+  }
+  .download {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 20px;
+    color: grey;
+  }
+  .download:hover {
+    text-decoration: underline;
+  }
+  .iconfont {
+    color: grey;
+    padding-left: 15px;
+  }
 </style>

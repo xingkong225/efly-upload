@@ -2,10 +2,12 @@
   <div class="private">
     <NavBar></NavBar>
     <div class="change">
-      <input type="text" placeholder="username or email">
-      <input type="password" placeholder="new password"><br/>
+      <input type="text" placeholder="email">
+      <input type="password" placeholder="old password">
+      <input type="password" placeholder="new password">
       <i class="iconfont icon-yonghuming"></i>
-      <i class="iconfont icon-mima"></i>
+      <i class="iconfont icon-mima old"></i>
+      <i class="iconfont icon-mima new"></i>
       <button type="button">确认</button>
     </div>
   </div>
@@ -25,12 +27,10 @@ export default {
 .change {
   float: right;
   width: 280px;
-  height: 327px;
-  margin-top: 118px;
-  margin-right: 114px;
+  margin-top: 72px;
   border: 1px solid #000;
-  padding: 110px 150px 0;
   position: relative;
+  padding: 100px 150px 100px;
 }
 .change input {
   width: 230px;
@@ -52,20 +52,20 @@ button {
   font-size: 25px;
   border-radius: 10px;
   cursor: pointer;
-  margin-top: 20px;
-  position: relative;
-  left: 10%;
+  margin-left: 8%;
 }
 .iconfont {
   position: absolute;
-  top: 0;
   left: 27.5%;
   font-size: 21px;
 }
 .icon-yonghuming {
-  top: 26.1%;
+  top: 22%;
 }
-.icon-mima {
-  top: 42.6%;
+.old {
+  top: 37.8%;
+}
+.new {
+  top: 53%;
 }
 </style>

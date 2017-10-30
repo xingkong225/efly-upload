@@ -6,12 +6,13 @@ import reg from '@/components/register'
 import login from '@/components/login'
 import grouper from '@/components/grouper'
 import iprivate from '@/components/private'
-import commit from '@/components/grouperCommit'
+import history from '@/components/history'
 
 Vue.use(Router)
 
 export default new Router({
   linkActiveClass: 'active',
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -53,9 +54,9 @@ export default new Router({
       component: iprivate
     },
     {
-      path: '/commit',
-      name: 'commit',
-      component: commit
+      path: '/history',
+      name: 'history',
+      component: history
     }
   ]
 })

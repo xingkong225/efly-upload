@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="logo">
     <h1>Efly</br> studio</h1>
+    <hr/>
   </div>
 </template>
 

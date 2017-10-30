@@ -6,23 +6,39 @@
         <h4>LOGIN</h4>
         <p class="p1">LOGIN  WITH  YOUR  ACCOUNT</p>
         <div class="input">
-          <input class="text" type="text" placeholder="username or email"><br/>
+          <input class="text" type="text" placeholder="email"><br/>
           <input class="password" type="password" placeholder="password"><br/>
           <i class="iconfont icon-mima"></i><i class="iconfont icon-yonghuming"></i>
         </div>
         <button type="button">Login</button>
-        <p class="p2">If you do not have an account<router-link to="/reg">Sign Up</router-link></p>
+        <p class="p2">If you do not have an account
+            <router-link class="sign" to="/reg">Sign Up</router-link>
+        </p>
       </div>
     </div>
+    <toast></toast>
   </div>
+
 </template>
 
 <script>
 import loginimg from "../vuefile/loginimg.vue"
+import toast from "../vuefile/toast.vue"
 export default {
   name: 'login',
   components: {
-    loginimg
+    loginimg,
+    toast
+  },
+  data () {
+    return {
+      show: true
+    }
+  },
+  methods: {
+    change () {
+      this.show = !this.show
+    }
   }
 }
 </script>
@@ -63,8 +79,12 @@ export default {
   font-size: 18px;
   cursor: pointer;
 }
-.login p {
-
+.login button:hover {
+  background-color: #4a76f2;
+  color: #fff;
+}
+.sign:hover {
+  text-decoration: underline;
 }
 .p1 {
   font-size: 14px;

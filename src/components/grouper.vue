@@ -15,7 +15,7 @@ export default {
   name: 'grouper',
   data () {
     return {
-      persons: ['xxx的第几次作业','xxx的第几次作业','xxx的第几次作业','xxx的第几次作业']
+      persons: ['姓名1','姓名2','姓名3']
     }
   },
   components: {
@@ -26,17 +26,17 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.homework {
-  float: right;
-  width: 708px;
-  height: 556px;
-  margin-top: 118px;
-  border: 1px solid #000;
-  padding: 100px 76px 0;
-}
-.homework li {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 40px;
-}
+  .homework {
+    float: right;
+    width: 500px;
+    height: 450px;
+    margin-top: 72px;
+    border: 1px solid #000;
+    padding: 100px 76px 0;
+  }
+  .homework li {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 35px;
+  }
 </style>
