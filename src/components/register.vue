@@ -6,13 +6,13 @@
       <div class="input-wrap">
         <input v-model="name" class="regInfo" type="text" placeholder="your name"><br/>
         <input v-model="email" class="regInfo" type="text" placeholder="email"><br/>
-        <input v-model="password" :class="{regInfo: common, passActive: isPass}" type="password" placeholder="password"><span v-show="warning" class="alert">长度必须为6-15个字符，且不能有标点符号</span><br/>
-        <input v-model="confirm" class="regInfo" type="password" placeholder="confirm your password">
+        <input v-model="password" :class="{regInfo: common, passActive: warning}" type="password" placeholder="password"><br/>
+        <input v-model="confirm" class="regInfo" type="password" placeholder="confirm your password"><span v-show="warning" class="alert">长度必须为6-15个字符，且不能有标点符号</span>
         <i class="iconfont icon-youxiang"></i>
         <i class="iconfont icon-yonghuming"></i>
         <i class="iconfont icon-mima pass1"></i>
         <i class="iconfont icon-mima pass2"></i>
-        <i class="iconfont icon-zhifuyouwenti"></i>
+        <i v-show="warning" class="iconfont icon-zhifuyouwenti"></i>
       </div>
       <div class="info">
         <p class="select">Select your academy: </p>
@@ -55,8 +55,7 @@ export default {
       msg: '',
 
       common: true,
-      isPass: true,
-      warning: true
+      warning: false
     }
   },
   components: {
@@ -71,7 +70,10 @@ export default {
   },
   methods: {
     submit () {
-      if (!this.email) {
+      if (!this.name) {
+        this.isAmpty = true,
+        this.msg = '请输入你的名字！'
+      } else if (!this.email) {
         this.isAmpty = true,
         this.msg = '请输入邮箱！'
       } else if (!this.password) {
@@ -90,26 +92,30 @@ export default {
         this.isAmpty = true,
         this.msg = '请选择你的组别！'
       } else {
-        server.post({
-          url: '/user/login',
+        let self = this;
+        Server.post({
+          url: '/user/reg',
           data: {
-            name: '',
-            email: '',
-            password: '',
-            academy: '',
-            team: ''
+            name: self.name, // (self.name是你自己data里的数据,self是this赋值过去的, 下同)
+            team: self.group,
+            password: self.password,
+            email: self.email,
+            academy: self.profession
           }
-          .then(data => {
-            data && data.msg && this.$Message.success(data.msg);
-            if(data.ok) {
-              this.$router.push('/')
-            }
-          })
-          .catch(err => {
-            console.log(err);
-          })
+        })
+        .then(data => {
+          this.isAmpty = true,
+          this.msg = data.msg
+        })
+        .catch(err => {
+          this.isAmpty = true,
+          this.msg = data.msg
         })
       }
+      if (this.password.length < 6) {
+        this.warning = true
+      } else
+        this.warning = false
     },
     closeoff () {
       this.isAmpty = false;
@@ -175,6 +181,7 @@ export default {
   .sub:hover {
     background-color: #4a76f2;
     color: #fff;
+    border: none;
   }
   .log a {
     padding-left: 30px;

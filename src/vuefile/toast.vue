@@ -1,12 +1,10 @@
 <template lang="html">
-  <transition name="fade">
   <div v-show="show" class="toast">
     <div class="alert">
       {{ msg }}
       <button @click="close" type="button">确认</button>
     </div>
   </div>
-</transition>
 </template>
 
 <script>
@@ -48,13 +46,14 @@ export default {
     height: 120px;
     text-align: center;
     line-height: 75px;
-    z-index: 2000;
     font-size: 18px;
     border-radius: 6px;
     box-shadow: 0 0 2px 1px #000;
     background-color: rgba(255, 255, 255, 0.8);
-    position: relative;
-    margin: 350px 0 0 760px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
   }
   .alert button {
     width: 80px;
@@ -67,16 +66,5 @@ export default {
     position: absolute;
     right: 40.3%;
     bottom: 20%;
-  }
-
-  //自定义动画
-  .fade-enter-active, .fade-leave-active{
-    transition: 10s opacity ease;
-  }
-  .fade-enter-active {
-    opacity: 1;
-  }
-  .fade-enter {
-    opacity: 0;
   }
 </style>

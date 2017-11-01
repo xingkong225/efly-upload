@@ -1,4 +1,5 @@
 import axios from 'axios'
+import utils from './../utils/utils.js'
 
 const host = 'http://112.74.36.142';
 
@@ -12,8 +13,6 @@ const Server = {
       console.log('参数错误');
       return false;
     }
-
-    options.withCredentials = true;
 
     return axios.get(host + options.url, options.data || {})
       .then(data => {
@@ -35,8 +34,6 @@ const Server = {
             'Content-Type': 'application/x-www-form-urlencoded',
         }
     }
-
-    options.withCredentials = true;
 
     if (options.data) {
       options.data = utils.formatData(options.data);
