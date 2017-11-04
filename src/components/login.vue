@@ -35,14 +35,12 @@ export default {
     return {
       email: '',
       password: '',
+      name: '',
 
 
       msg: "",
       isAmpty: false
     }
-  },
-  created() {
-
   },
   methods: {
     closeoff() {

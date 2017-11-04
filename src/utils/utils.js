@@ -38,6 +38,20 @@ const utils = {
       } catch(e) {
         throw Error('sessionStorage不被浏览器支持', e);
       }
+    },
+    del(key) {
+      try {
+        window.sessionStorage.removeItem(key);
+      } catch(e) {
+        throw Error('sessionStorage不被浏览器支持', e);
+      }
+    },
+    clear() {
+      try {
+        window.sessionStorage.clear();
+      } catch(e) {
+        throw Error('sessionStorage不被浏览器支持', e);
+      }
     }
   }
 }

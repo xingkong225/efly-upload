@@ -39,7 +39,7 @@ const Server = {
       options.data = utils.formatData(options.data);
     }
 
-    return axios.post(host + options.url, options.data || options.config || {})
+    return axios.post(host + options.url, options.data, options.config || {})
       .then(data => {
         return data.data;
       })

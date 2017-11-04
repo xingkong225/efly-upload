@@ -3,37 +3,80 @@
     <NavBar></NavBar>
     <div class="wrap">
       <form class="content">
-        <p class="homework">作业描述：</p><textarea class="desc" placeholder="请在这里写下你对作业的描述......"></textarea>
+        <p class="homework">作业描述：</p><textarea v-model="description" class="desc" placeholder="请在这里写下你对作业的描述......"></textarea>
         <p>作业附件：</p>
         <a href="javascript:;" class="upload">
         <span v-if="!filename">请选择文件：文件的后缀名只能是rar或者zip</span><span v-else>{{ filename }}</span><input type="file" name="work" @change="filechange">
         <i class="iconfont icon-shangchuanziliao"></i>
         </a><br/>
-        <button>提交</button>
+        <button @click='submit' type="button">提交</button>
       </form>
     </div>
+    <toast :show="isAmpty" :msg="msg" @closeoff="closeoff"></toast>
   </div>
 </template>
 
 <script>
 import NavBar from "./nav"
+import Server from "./../api/server.js"
+import utils from './../utils/utils'
+import toast from './../vuefile/toast'
 export default {
   name: 'upload',
   data () {
     return {
-      filename: ''
+      filename: '',
+      fileObj: null,
+      description: '',
+
+      isAmpty: false,
+      msg: ''
     }
   },
   components: {
-    NavBar
+    NavBar,
+    toast
   },
   methods: {
+    closeoff() {
+      this.isAmpty = false
+    },
     filechange(e) {
       var fileObj = e.target.files[0];
+      this.fileObj = fileObj;
       this.filename = fileObj.name;
+    },
+    submit() {
+        let self = this;
+        let data = new FormData();
+        data.append('description', self.description);
+        data.append('work', self.fileObj);
+        Server.post({
+          url: '/file/add',
+          data: data,
+          config: {
+            headers: {
+              'Content-Type': 'multipart/form-data'
+            }
+          }
+        })
+        .then(data => {
+          console.log(data);
+          if(data.ok){
+            self.isAmpty = true
+            self.msg = data.msg
+            console.log(data.msg)
+          } else {
+            self.isAmpty = true,
+            self.msg = data.msg
+          }
+        })
+        .catch(err => {
+          console.log(err);
+        })
+      }
     }
   }
-}
 </script>
 
 <style lang="css" scoped>

@@ -4,10 +4,10 @@
     <div class="reg">
       <h4>register</h4>
       <div class="input-wrap">
-        <input v-model="name" class="regInfo" type="text" placeholder="your name"><br/>
-        <input v-model="email" class="regInfo" type="text" placeholder="email"><br/>
-        <input v-model="password" :class="{regInfo: common, passActive: warning}" type="password" placeholder="password"><br/>
-        <input v-model="confirm" class="regInfo" type="password" placeholder="confirm your password"><span v-show="warning" class="alert">长度必须为6-15个字符，且不能有标点符号</span>
+        <input v-model="name" class="regInfo" type="text" placeholder="请输入你的真实姓名"><br/>
+        <input v-model="email" class="regInfo" type="text" placeholder="请输入你的邮箱"><br/>
+        <input v-model="password" :class="{regInfo: common, passActive: warning}" type="password" placeholder="请输入你的密码"><br/>
+        <input v-model="confirm" class="regInfo" type="password" placeholder="请确认你的密码"><span v-show="warning" class="alert">长度必须为6-15个字符，且不能有标点符号</span>
         <i class="iconfont icon-youxiang"></i>
         <i class="iconfont icon-yonghuming"></i>
         <i class="iconfont icon-mima pass1"></i>
@@ -64,9 +64,6 @@ export default {
   },
   mounted() {
     this.profession = '-- 请选择学院 --';
-  },
-  computed: {
-
   },
   methods: {
     submit () {

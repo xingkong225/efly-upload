@@ -1,0 +1,51 @@
+[33mcommit 4a3b523ce17ff5efbaaebc57ef696eb373bc6f65[m
+Author: liyuxin <1144821589@qq.com>
+Date:   Thu Nov 2 10:50:04 2017 +0800
+
+    upload
+
+[33mcommit f4a101a6fa847174c7bcfd8b4ffdf5244ddc4172[m
+Author: liyx <1144821589@qq.com>
+Date:   Wed Nov 1 09:40:54 2017 +0800
+
+    upload
+
+[33mcommit 8ad40ea459d9177788e3082edb71d1325d21d8c1[m
+Author: liyuxin <1144821589@qq.com>
+Date:   Tue Oct 31 07:46:23 2017 +0800
+
+    demo
+
+[33mcommit 1bd36a3d65ff609b30ae7cd256c8d0e68c140790[m
+Author: liyuxin <1144821589@qq.com>
+Date:   Wed Oct 25 22:04:20 2017 +0800
+
+    upload sacond
+
+[33mcommit 5737e4b2ab60b19af5c0f2f98876d03087079f31[m
+Author: liyuxin <1144821589@qq.com>
+Date:   Wed Oct 25 16:02:19 2017 +0800
+
+    first upload
+
+[33mcommit 4193a240abc1474148e1bfdef684090bd1d4e47b[m
+Merge: 2779b9e 9d8b42e
+Author: 马晓阳 <maxy61209@gmail.com>
+Date:   Sun Oct 22 10:14:10 2017 +0800
+
+    Merge branch 'master' of bitbucket.org:eflystudio/workmgmt-front
+    
+    # Conflicts:
+    #       .gitignore
+
+[33mcommit 2779b9e4ff0f9bb03772671e87056035d3968688[m
+Author: 马晓阳 <maxy61209@gmail.com>
+Date:   Sun Oct 22 10:06:45 2017 +0800
+
+    上传项目初始文件
+
+[33mcommit 9d8b42e9dcb708a214d80f536e750b8d4e530bf7[m
+Author: 马晓阳 <630259701@qq.com>
+Date:   Sun Oct 22 01:51:18 2017 +0000
+
+    创建.gitignore

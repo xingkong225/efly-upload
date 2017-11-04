@@ -7,7 +7,6 @@ import login from '@/components/login'
 import grouper from '@/components/grouper'
 import iprivate from '@/components/private'
 import history from '@/components/history'
-import change from '@/components/changepass'
 
 Vue.use(Router)
 
@@ -58,11 +57,6 @@ export default new Router({
       path: '/history',
       name: 'history',
       component: history
-    },
-    {
-      path: '/change',
-      name: 'change',
-      component: change
     }
   ]
 })
